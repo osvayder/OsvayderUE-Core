@@ -1,0 +1,59 @@
+{
+	"FileVersion": 3,
+	"Version": 7,
+	"VersionName": "1.4.1",
+	"FriendlyName": "Osvayder UE",
+	"Description": "Osvayder UE editor assistant for Unreal Engine 5.7 with MCP tooling, restart-survival workflows, and provider-backed coding help.",
+	"Category": "Editor",
+	"CreatedBy": "Natali Caggiano",
+	"CreatedByURL": "https://github.com/Natfii",
+	"DocsURL": "https://github.com/Natfii/UnrealClaude",
+	"MarketplaceURL": "",
+	"SupportURL": "https://github.com/Natfii/UnrealClaude/issues",
+	"CanContainContent": false,
+	"IsBetaVersion": true,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"EnabledByDefault": true,
+	"EngineVersion": "5.7.0",
+	"SupportedTargetPlatforms": [ "Win64", "Linux", "Mac" ],
+	"Modules": [
+		{
+			"Name": "UnrealClaude",
+			"Type": "Editor",
+			"LoadingPhase": "PostEngineInit",
+			"PlatformAllowList": [ "Win64", "Linux", "Mac" ]
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "EditorScriptingUtilities",
+			"Enabled": true,
+			"Optional": true
+		},
+		{
+			"Name": "EnhancedInput",
+			"Enabled": true
+		},
+		{
+			"Name": "GameplayAbilities",
+			"Enabled": true
+		},
+		{
+			"Name": "Niagara",
+			"Enabled": true
+		},
+		{
+			"Name": "OnlineSubsystem",
+			"Enabled": true
+		},
+		{
+			"Name": "OnlineSubsystemUtils",
+			"Enabled": true
+		},
+		{
+			"Name": "LevelSequenceEditor",
+			"Enabled": true
+		}
+	]
+}

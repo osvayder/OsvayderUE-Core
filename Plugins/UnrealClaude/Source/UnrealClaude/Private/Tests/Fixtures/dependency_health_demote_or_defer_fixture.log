@@ -1,0 +1,1 @@
+[2026.04.02-20.41.12:000][  0]LogLinker: Warning: While trying to load package /Game/Legacy/Deprecated/BP_DeprecatedPrototype, a dependent package /Script/PrototypeRuntime was not available.
