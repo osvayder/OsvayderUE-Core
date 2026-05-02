@@ -4,6 +4,12 @@ Osvayder UE Core is an Unreal Engine 5 editor-assistant plugin focused on safe A
 
 It is being developed as an open-source core for Codex-first Unreal workflows rather than as a generic chat panel. The project is aimed at developers, technical artists, and small teams who want a stronger execution/verification layer around real UE editor tasks.
 
+## Why This Matters
+
+Unreal Engine tool development often requires large-context C++ work, editor restarts, reflected-type changes, Blueprint and asset validation, and careful manual verification. Osvayder UE Core focuses on making those AI-assisted workflows safer and more repeatable for the Unreal community.
+
+The project is designed to help maintainers and contributors route editor-aware actions through a bounded MCP tool surface, preserve verification evidence, recover across editor restarts, and reduce blind file mutation through scoped plans and truthful closeout states.
+
 ## Project Origin
 
 Osvayder UE Core originated from an earlier open-source Unreal assistant base that supported Claude-oriented workflows inside Unreal Editor. Since then, the system has been substantially reworked around Codex-first execution, stronger verification boundaries, restart-survival, MCP tooling, sandbox-safe mutation, and broader Unreal editor automation. Current maintenance and product direction are led by Osvayder.
@@ -24,7 +30,9 @@ For the first public OSS release, the plugin remains under `Plugins/UnrealClaude
 - Version: `1.4.1`
 - Public maturity: beta / controlled dogfood ready
 - OSS state: public core export is live; deeper public packaging and product-hardening continue
-- Public release claim: not Marketplace-ready yet; repository is intended for open-source collaboration, validation, and grant/maintainer support
+- Primary target: Unreal Engine `5.7`
+- Planned validation: UE `5.6` and broader clean-clone packaging checks
+- Public release claim: not Marketplace-ready yet; repository is intended for open-source collaboration, validation, and maintainer support
 
 ## Screenshots
 
