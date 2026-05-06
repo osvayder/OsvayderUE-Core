@@ -1,0 +1,29 @@
+{
+  "workflow_type": "mcp_tool_review",
+  "title": "MCP tool parameter validator review",
+  "public_surface": [
+    "MCP command schema",
+    "Unreal Editor tool bridge",
+    "automation test fixtures"
+  ],
+  "change_summary": "Review a public pull request that tightens MCP tool parameter validation and updates maintainer-facing fixtures.",
+  "evidence": [
+    "Node-free dry-run reviewer prompt",
+    "Unreal automation test names",
+    "public README behavior notes"
+  ],
+  "known_constraints": [
+    "No private project assets",
+    "No local machine paths",
+    "No API calls during default evaluation"
+  ],
+  "verification": {
+    "commands_run": [
+      "UnrealEditor-Cmd.exe -ExecCmds=\"Automation RunTests Osvayder.MCP\""
+    ],
+    "manual_checks": [
+      "Review public-facing schema names for stable wording",
+      "Confirm examples contain no secrets"
+    ]
+  }
+}

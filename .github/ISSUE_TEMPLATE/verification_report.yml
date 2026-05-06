@@ -1,0 +1,94 @@
+name: Verification report
+description: Share installation, build, test, MCP bridge, or Unreal validation evidence.
+title: "[Verification]: "
+labels:
+  - verification
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for reproducible validation evidence. Remove secrets, private paths, provider transcripts, and local session data.
+  - type: dropdown
+    id: verification-type
+    attributes:
+      label: Verification type
+      options:
+        - Installation
+        - Unreal Editor load
+        - Unreal automation tests
+        - MCP bridge npm checks
+        - MCP bridge JSON parse
+        - Documentation walkthrough
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: ue-version
+    attributes:
+      label: Unreal Engine version
+      placeholder: "Example: 5.4.4"
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: "Example: Windows 11 23H2"
+    validations:
+      required: true
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Plugin version, tag, or commit
+      placeholder: "Example: v0.1.0 or commit SHA"
+    validations:
+      required: true
+  - type: dropdown
+    id: host-project-type
+    attributes:
+      label: Host project type
+      options:
+        - C++ project
+        - Blueprint-only project
+        - Minimal/sample host project
+        - Existing production project
+        - Not applicable
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: commands
+    attributes:
+      label: Commands or workflow steps
+      description: List exact commands or editor steps. Use generic paths if needed.
+      render: text
+      placeholder: |
+        npm install
+        npm test
+        Open Unreal Editor and enable the plugin
+    validations:
+      required: true
+  - type: textarea
+    id: results
+    attributes:
+      label: Results and evidence
+      description: Paste sanitized command output, logs, screenshots summary, or test results.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes, deviations, or failures
+      placeholder: Mention anything that differed from the documented path.
+    validations:
+      required: false
+  - type: checkboxes
+    id: hygiene
+    attributes:
+      label: Public hygiene confirmation
+      options:
+        - label: I removed secrets, tokens, private paths, provider transcripts, and local session data.
+          required: true
+        - label: I included enough evidence for maintainers to compare environments.
+          required: true

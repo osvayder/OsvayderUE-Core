@@ -1,0 +1,31 @@
+{
+  "workflow_type": "verification_receipt",
+  "title": "Public release verification receipt",
+  "public_surface": [
+    "release notes",
+    "maintainer checklist",
+    "verification command transcript"
+  ],
+  "change_summary": "Summarize whether a release candidate has enough reproducible evidence for public grant review.",
+  "evidence": [
+    "sanitized command output",
+    "test pass/fail counts",
+    "manual QA checklist"
+  ],
+  "known_constraints": [
+    "Receipt must be shareable in public issue trackers",
+    "Do not include private game logs",
+    "Do not include absolute workstation paths",
+    "No real API calls during default evaluation"
+  ],
+  "verification": {
+    "commands_run": [
+      "npm test",
+      "npm run dry-run"
+    ],
+    "manual_checks": [
+      "Inspect JSON for required grant-evaluation fields",
+      "Confirm no real API request is made by default"
+    ]
+  }
+}

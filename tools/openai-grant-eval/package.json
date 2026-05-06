@@ -1,0 +1,15 @@
+{
+  "name": "openai-grant-eval",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Dry-run OpenAI grant evaluation harness for public PR, release, and verification workflows.",
+  "type": "module",
+  "scripts": {
+    "dry-run": "node src/index.js --dry-run",
+    "eval:sample": "node src/index.js --eval-sample",
+    "test": "node src/index.js --self-test"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

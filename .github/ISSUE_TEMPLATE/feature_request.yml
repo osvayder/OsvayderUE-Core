@@ -1,0 +1,82 @@
+name: Feature request
+description: Suggest a contributor-facing, plugin, MCP bridge, documentation, or workflow improvement.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please describe the workflow and evidence without including secrets, private paths, provider transcripts, or confidential host-project data.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or workflow gap
+      description: What are you trying to do, and why is current behavior insufficient?
+      placeholder: Describe the workflow gap.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the smallest useful change.
+      placeholder: What should change?
+    validations:
+      required: true
+  - type: input
+    id: ue-version
+    attributes:
+      label: Unreal Engine version
+      placeholder: "Example: 5.4.4"
+    validations:
+      required: false
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: "Example: Windows 11 23H2"
+    validations:
+      required: false
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Plugin version, tag, or commit
+      placeholder: "Example: v0.1.0 or commit SHA"
+    validations:
+      required: false
+  - type: dropdown
+    id: host-project-type
+    attributes:
+      label: Host project type
+      options:
+        - C++ project
+        - Blueprint-only project
+        - Minimal/sample host project
+        - Existing production project
+        - Not applicable
+        - Other
+    validations:
+      required: false
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      placeholder: What workarounds or alternative designs did you consider?
+    validations:
+      required: false
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification or examples
+      description: Include sanitized examples, logs, screenshots summary, or validation notes if available.
+      render: text
+    validations:
+      required: false
+  - type: checkboxes
+    id: hygiene
+    attributes:
+      label: Public hygiene confirmation
+      options:
+        - label: I removed secrets, tokens, private paths, provider transcripts, and local session data.
+          required: true

@@ -1,0 +1,2 @@
+[2026.04.02-14.02.38:601][  0]LogLinker: Warning: [AssetLog] X:\PublicExample\Unreal\SampleProject\Content\Characters\Mannequins\Anims\Pistol\MM_Pistol_Fire.uasset: VerifyImport: Failed to find script package for import object 'Package /Script/Spatialization'
+[2026.04.02-14.02.38:602][  0]LogLinker: Warning: [AssetLog] X:\PublicExample\Unreal\SampleProject\Content\Characters\Mannequins\Anims\Pistol\MM_Pistol_Reload.uasset: VerifyImport: Failed to find script package for import object 'Package /Script/LyraGame'

@@ -1,0 +1,93 @@
+name: Bug report
+description: Report a reproducible problem in the plugin, MCP bridge, docs, or examples.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Remove secrets, private paths, provider transcripts, and host-project data from all logs and screenshots.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Briefly describe the problem and the expected behavior.
+      placeholder: What happened, and what did you expect instead?
+    validations:
+      required: true
+  - type: input
+    id: ue-version
+    attributes:
+      label: Unreal Engine version
+      placeholder: "Example: 5.4.4"
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: "Example: Windows 11 23H2"
+    validations:
+      required: true
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Plugin version, tag, or commit
+      placeholder: "Example: v0.1.0 or commit SHA"
+    validations:
+      required: true
+  - type: dropdown
+    id: host-project-type
+    attributes:
+      label: Host project type
+      options:
+        - C++ project
+        - Blueprint-only project
+        - Minimal/sample host project
+        - Existing production project
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: repro-steps
+    attributes:
+      label: Reproduction steps
+      description: Provide the smallest reliable reproduction.
+      placeholder: |
+        1. Enable the plugin...
+        2. Run...
+        3. Observe...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      placeholder: What should have happened?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      placeholder: What happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Verification evidence and sanitized logs
+      description: Paste relevant logs, command output, screenshots summary, or automation results. Remove secrets and private paths.
+      render: text
+    validations:
+      required: false
+  - type: checkboxes
+    id: hygiene
+    attributes:
+      label: Public hygiene confirmation
+      options:
+        - label: I removed secrets, tokens, private paths, provider transcripts, and local session data.
+          required: true
+        - label: I included enough version and environment details for maintainers to reproduce the issue.
+          required: true

@@ -1,0 +1,97 @@
+name: Public Hygiene
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  hygiene:
+    name: Metadata and private-path hygiene
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate JSON metadata
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          class DuplicateKeyError(ValueError):
+              pass
+
+          def reject_duplicate_keys(pairs):
+              result = {}
+              for key, value in pairs:
+                  if key in result:
+                      raise DuplicateKeyError(f"duplicate key: {key}")
+                  result[key] = value
+              return result
+
+          for filename in [
+              "Plugins/OsvayderUE/OsvayderUE.uplugin",
+              "Plugins/OsvayderUE/Resources/mcp-config.json",
+              "Plugins/OsvayderUE/Resources/mcp-bridge/package.json",
+              "Plugins/OsvayderUE/.mcp.example.json",
+          ]:
+              with Path(filename).open(encoding="utf-8") as handle:
+                  json.load(handle, object_pairs_hook=reject_duplicate_keys)
+              print(f"{filename}: ok")
+          PY
+
+      - name: Check private paths and stale links
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          excludes=(
+            ':!.git'
+            ':!**/node_modules/**'
+            ':!**/Binaries/**'
+            ':!**/Intermediate/**'
+            ':!**/Saved/**'
+            ':!LICENSE'
+            ':!NOTICE.md'
+            ':!**/LICENSE'
+            ':!**/NOTICE.md'
+          )
+
+          patterns=(
+            'D:/Vibe''Code'
+            'D:\Vibe''Code'
+            'C:/Users/''user'
+            'C:\Users\''user'
+            'github.com/''Natfii/OsvayderUE'
+            'Natfii/''osvayderue-mcp-bridge'
+            'Plugins/''UnrealClaude'
+            'Unreal Engine 5.''6'
+            'UE 5.''6'
+          )
+
+          failed=0
+          for pattern in "${patterns[@]}"; do
+            if git grep -n -F -- "$pattern" -- . "${excludes[@]}"; then
+              failed=1
+            fi
+          done
+
+          for candidate in .mcp.json Plugins/OsvayderUE/.mcp.json; do
+            if git ls-files --error-unmatch "$candidate" >/dev/null 2>&1; then
+              echo "$candidate must not be committed"
+              failed=1
+            fi
+          done
+
+          exit "$failed"
+
+      - name: Test MCP bridge
+        working-directory: Plugins/OsvayderUE/Resources/mcp-bridge
+        run: npm ci && npm test

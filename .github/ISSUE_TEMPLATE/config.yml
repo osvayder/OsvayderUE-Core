@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Sensitive vulnerability reporting
+    url: https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing/privately-reporting-a-security-vulnerability
+    about: Do not post sensitive vulnerability details publicly. Use GitHub private vulnerability reporting if it is enabled for this repository.

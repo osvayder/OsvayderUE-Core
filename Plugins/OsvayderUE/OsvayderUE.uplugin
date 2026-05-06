@@ -1,0 +1,63 @@
+{
+	"FileVersion": 3,
+	"Version": 11,
+	"VersionName": "1.1",
+	"FriendlyName": "Osvayder UE",
+	"Description": "Codex-first Osvayder UE development agent for Unreal Engine 5.7 with MCP tooling, restart-survival workflows, verification receipts, and legacy Claude compatibility.",
+	"Category": "Editor",
+	"CreatedBy": "Osvayder",
+	"CreatedByURL": "https://github.com/osvayder",
+	"DocsURL": "https://github.com/osvayder/OsvayderUE-Core",
+	"MarketplaceURL": "",
+	"SupportURL": "https://github.com/osvayder/OsvayderUE-Core/issues",
+	"CanContainContent": false,
+	"IsBetaVersion": true,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"EnabledByDefault": true,
+	"EngineVersion": "5.7.0",
+	"SupportedTargetPlatforms": [ "Win64" ],
+	"Modules": [
+		{
+			"Name": "OsvayderUE",
+			"Type": "Editor",
+			"LoadingPhase": "PostEngineInit",
+			"PlatformAllowList": [ "Win64" ]
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "EditorScriptingUtilities",
+			"Enabled": true,
+			"Optional": true
+		},
+		{
+			"Name": "EnhancedInput",
+			"Enabled": true
+		},
+		{
+			"Name": "GameplayAbilities",
+			"Enabled": true
+		},
+		{
+			"Name": "Niagara",
+			"Enabled": true
+		},
+		{
+			"Name": "OnlineSubsystem",
+			"Enabled": true
+		},
+		{
+			"Name": "OnlineSubsystemUtils",
+			"Enabled": true
+		},
+		{
+			"Name": "LevelSequenceEditor",
+			"Enabled": true
+		},
+		{
+			"Name": "IKRig",
+			"Enabled": true
+		}
+	]
+}

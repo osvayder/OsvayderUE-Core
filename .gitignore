@@ -1,0 +1,40 @@
+# Unreal generated state
+Saved/
+Intermediate/
+Binaries/
+DerivedDataCache/
+Build/
+
+# Local review / agent state
+AgentBridge/
+.claude/
+.claude-plugins/
+ReviewBundles/
+Backups/
+*.zip
+*.rar
+*.7z
+
+# Local auth / session material
+.mcp.json
+.env
+*.token
+*token*.json
+*session*.json
+*auth*.json
+token-session-auth/
+
+# Node / coverage
+node_modules/
+coverage/
+.nyc_output/
+
+# IDE / OS
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+Thumbs.db
+.DS_Store
+
